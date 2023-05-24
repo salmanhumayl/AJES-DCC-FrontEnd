@@ -11,6 +11,8 @@ const routes:Routes=[
     {path:'login',component:LoginComponent},
     {path:'main',component:LandingComponent},
     {path:'sidemenu',component:SidebarComponent},
+
+    {path:'',component:LoginComponent},
    
     {
       path:'register',
