@@ -1,0 +1,101 @@
+ 
+ <main id="main" class="main">
+  <section class="section">
+      <div class="pagetitle">
+        <h1></h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">{{description}}</li>
+          
+          </ol>
+        </nav>
+      </div><!-- End Page Title -->
+
+<hr>
+<a [routerLink]="['/register/OutgoingAddNew']" type="button" class="btn btn-primary">Add New</a>
+
+          <dx-data-grid
+
+          id="dataGridRef"
+          [dataSource]="dataSource"
+          [remoteOperations]="true"
+          
+          [showColumnLines]="true"
+          [showRowLines]="true"
+          [showBorders]="true">
+          
+            
+          
+          <dxo-filter-row [visible]="true"></dxo-filter-row>
+          <dxo-header-filter [visible]="true"></dxo-header-filter>
+          <dxo-export [enabled]="true"> </dxo-export>
+         
+    
+          <dxi-column dataField="date"
+           caption="Date" dataType="date" [format]="{ type: 'dd/MMM/yy' }"
+          
+           ></dxi-column>
+          <dxi-column
+             dataField="orign" 
+             caption="Orig" 
+             
+             
+             ></dxi-column>
+          <dxi-column dataField="corresType" caption="Corresp.Type"></dxi-column>
+          <dxi-column dataField="fileNo" caption="File No"></dxi-column>
+          <dxi-column dataField="reference" caption="Reference" [width]="200"></dxi-column>
+          <dxi-column 
+            dataField="subject" 
+            caption="Subject"  [width]="200"
+            >
+            </dxi-column>
+            <dxi-column 
+            dataField="address" 
+            caption="Address"
+            >
+            </dxi-column>
+
+            <dxi-column 
+            dataField="typist" 
+            caption="Typist"
+            >
+            </dxi-column>
+
+
+            <dxi-column 
+            dataField="remarks" 
+            caption="Remarks"
+            >
+            </dxi-column>
+            <dxi-column
+                 dataField="path" caption="File" [width]="100"
+                  [allowFiltering]="false"
+                  [allowSorting]="false"
+                  cellTemplate="cellTemplate"
+                 >
+            </dxi-column>
+           
+            <div *dxTemplate="let data of 'cellTemplate'">
+              <a [href]="filepath +data.value" target="_blank">{{data.value}}</a>
+            </div>
+    
+         
+
+            <dxi-column dataField="id" caption="Action" [width]="100"
+                
+            [allowFiltering]="false"
+            [allowSorting]="false"
+            cellTemplate="cellTemplate1"
+            editCellTemplate="editCellTemplate">
+      </dxi-column>
+     
+
+            <div *dxTemplate="let data of 'cellTemplate1'">
+              <a [routerLink]="['/register/OutgoingEdit/',data.value]">Edit</a>
+            </div>
+    
+           <dxo-paging [pageSize]="15"> </dxo-paging>
+          </dx-data-grid>
+        </section>
+        </main>
+ 
