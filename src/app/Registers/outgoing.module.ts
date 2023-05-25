@@ -10,6 +10,9 @@ import { OutgoingListComponent } from './OnGoing/List/outgoinglist.component';
 import { outgoingAddComponent } from './OnGoing/Add/outgoingAdd.component';
 import { outgoingEditComponent } from './OnGoing/Edit/outgoingEdit.component';
 
+
+import { IncomingListComponent } from './InComing/List/incominglist.component';
+
 const routes: Routes = [
 
   {
@@ -21,6 +24,13 @@ const routes: Routes = [
       
       path: 'Out/:project/:description',
       component: OutgoingListComponent
+    
+    },
+
+    {
+      
+      path: 'In/:project/:description',
+      component: IncomingListComponent
     
     },
     {
@@ -35,7 +45,7 @@ const routes: Routes = [
   
   @NgModule({
     imports: [DevExtremeModule,DxFileUploaderModule,FormsModule, CommonModule,BsDatepickerModule.forRoot(),RouterModule.forChild(routes)],
-    declarations: [OutgoingListComponent, outgoingAddComponent,outgoingEditComponent,SubmenuComponent],
+    declarations: [OutgoingListComponent, outgoingAddComponent,outgoingEditComponent,SubmenuComponent, IncomingListComponent],
     exports: [RouterModule]
   })
   export default class OutGoingModule { }
