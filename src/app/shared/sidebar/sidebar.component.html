@@ -1,9 +1,7 @@
 <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-  
-      <a routerLink="register/menu">test</a>
-      <ng-container *ngFor="let productitem of RFQDetail">
+    <ng-container *ngFor="let productitem of RFQDetail">
       <li class="nav-item">
         <a class="nav-link collapsed" [attr.data-bs-target]="'#' + productitem.abbr" data-bs-toggle="collapse" href="#">
 
