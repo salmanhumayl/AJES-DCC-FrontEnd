@@ -11,9 +11,8 @@ import { AppComponent } from './app.component';
 
 
 
-
+import { NgxUiLoaderModule,NgxUiLoaderRouterModule  } from "ngx-ui-loader";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './guard/auth.guard';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,7 +37,10 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderRouterModule  
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
