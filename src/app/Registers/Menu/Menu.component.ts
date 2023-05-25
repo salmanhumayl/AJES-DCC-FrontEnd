@@ -10,6 +10,7 @@ import { AJESService } from '../../app.service';
 export class SubmenuComponent implements OnInit {
   RFQDetail:any[];
   folderid:number;
+  isloaded:boolean=false;
  
   //const id = + this.route.snapshot.paramMap.get('id');
   
@@ -29,7 +30,9 @@ export class SubmenuComponent implements OnInit {
 
   getregister(){
     this.AJESservice.getregister(this.folderid).subscribe((data)=>  {
+
       this.RFQDetail=data;
+      this.isloaded=true;
      // console.log(this.RFQDetail);
     });
   }
