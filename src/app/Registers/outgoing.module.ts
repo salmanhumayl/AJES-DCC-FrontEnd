@@ -19,16 +19,16 @@ const routes: Routes = [
   },
     {
       
-      path: 'Out',
+      path: 'Out/:project/:description',
       component: OutgoingListComponent
     
     },
     {
-      path: 'OutgoingAddNew',
+      path: 'OutgoingAddNew/:project/:description',
       component: outgoingAddComponent
     },
     {
-        path: 'OutgoingEdit/:ID',
+        path: 'OutgoingEdit/:ID/:project/:description',
         component: outgoingEditComponent
      }
   ]
