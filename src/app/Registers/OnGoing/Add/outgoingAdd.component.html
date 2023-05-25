@@ -1,4 +1,14 @@
 <main id="main" class="main">
+  <div class="pagetitle">
+    <h1>{{project}}</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item ">{{project}}</li> 
+        <li class="breadcrumb-item active">{{description}}</li>
+ 
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
   <section class="section">
 <div class="col-lg-12">
 
@@ -8,14 +18,12 @@
 
         <!-- General Form Elements -->
         <form #itemForm="ngForm" novalidate (ngSubmit)="onFormSubmit(itemForm)">
-
-        
-
             <div class="row mb-3">
                 <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
                 <div class="col-sm-10">
                   <input type="text" 
                    class="form-control" 
+                   autocomplete="off"
                    bsDatepicker [bsConfig]="datePickerConfig"
                    id="Date" 
                    name="Date"
@@ -90,16 +98,16 @@
               <button type="button" class="btn btn-success pull-right" (click)="goback()">Go Back </button>
             </div>
            
-            <div class="col-sm-3" >
+            <!-- div class="col-sm-3" >
            
               <span *ngIf="isViewLoading">
                   <img src="../../assets/images/ng-loader.gif"/>
                   <span style="color: red">Processing!!! Please wait....</span>
               
                 </span>
-              </div>
+           </div> -->
            
-            <div class="col-sm-4" >  
+            <div class="col-sm-6" >  
               <span style="color: red;font-size: x-large;" #message></span>
             </div>
           </div>

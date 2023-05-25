@@ -6,6 +6,7 @@ import { DCCOnGoing } from '../../../Models/DCCOnGoing';
 ;
 import { AJESService } from '../../../app.service';
 import { NgForm } from '@angular/forms';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-outgingadd',
@@ -16,14 +17,16 @@ export class outgoingAddComponent  {
   items:DCCOnGoing=new DCCOnGoing();
   isViewLoading:boolean=false;
   selectedFile: File;
+  project:string;
+  description:string;
+
 
   datePickerConfig:Partial<BsDatepickerConfig>;
 
    @ViewChild('message') displaymessage: ElementRef;   
 
-    constructor(private AJESservice:AJESService,private router:Router,private activeRouter:ActivatedRoute){
-     
-
+    constructor(private AJESservice:AJESService,private router:Router,private activeRouter:ActivatedRoute,private ngxService: NgxUiLoaderService)
+    {
       this.datePickerConfig=Object.assign({},
         {
           todayHighlight: true,
@@ -35,12 +38,15 @@ export class outgoingAddComponent  {
           
         });
 
-   
+        this.project=  this.activeRouter.snapshot.paramMap.get('project');
+        this.description =  this.activeRouter.snapshot.paramMap.get('description');
     }
+    
   
    onFormSubmit(form:NgForm){
     
-    this.isViewLoading=true;
+    this.ngxService.start();
+   // this.isViewLoading=true;
 
    const formData=new FormData();
    var datestr=(new Date(this.items.date)).toUTCString();
@@ -61,6 +67,7 @@ export class outgoingAddComponent  {
          this.isViewLoading=false;
          this.displaymessage.nativeElement.innerHTML=result.message;
          form.reset();
+         this.ngxService.stop();
         });
   }
 
@@ -72,7 +79,7 @@ export class outgoingAddComponent  {
   }
   goback(){
 
-    this.router.navigate(['register/Out']);
+    this.router.navigate(['register/Out',this.project,this.description]);
   }
   
 }

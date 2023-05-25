@@ -1,18 +1,20 @@
  
  <main id="main" class="main">
+  <div class="pagetitle">
+    <h1>{{project}}</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item ">{{project}}</li> 
+        <li class="breadcrumb-item active">{{description}}</li>
+ 
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
   <section class="section">
-      <div class="pagetitle">
-        <h1></h1>
-        <nav>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">{{description}}</li>
-          
-          </ol>
-        </nav>
-      </div><!-- End Page Title -->
+      
 
 <hr>
-<a [routerLink]="['/register/OutgoingAddNew']" type="button" class="btn btn-primary">Add New</a>
+<a [routerLink]="['/register/OutgoingAddNew',project,description]" type="button" class="btn btn-primary">Add New</a>
 
           <dx-data-grid
 
@@ -91,7 +93,7 @@
      
 
             <div *dxTemplate="let data of 'cellTemplate1'">
-              <a [routerLink]="['/register/OutgoingEdit/',data.value]">Edit</a>
+              <a [routerLink]="['/register/OutgoingEdit/',data.value,project,description]">Edit</a>
             </div>
     
            <dxo-paging [pageSize]="15"> </dxo-paging>

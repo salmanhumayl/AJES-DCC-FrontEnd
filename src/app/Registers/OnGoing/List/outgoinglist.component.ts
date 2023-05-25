@@ -18,7 +18,9 @@ export class OutgoingListComponent {
 
   filepath="http://localhost/Payrolldays/doc/"
   name: string="";
+  project:string;
   description:string;
+
 
  dataSource: any;
  url: string;
@@ -39,7 +41,9 @@ export class OutgoingListComponent {
 
  constructor(private AJESservice:AJESService,private route:ActivatedRoute){
 
+  this.project=  this.route.snapshot.paramMap.get('project');
   this.description =  this.route.snapshot.paramMap.get('description');
+  
   
     //this.dataSource=service.getcompanies();
     this.url = 'https://localhost:44363/PayrollDaysMaster';

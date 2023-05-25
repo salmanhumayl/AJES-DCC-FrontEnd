@@ -5,6 +5,8 @@ import { DCCOnGoing } from '../../../Models/DCCOnGoing';
 import { AJESService } from '../../../app.service';
 import { NgForm } from '@angular/forms';
 
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+
 @Component({
   selector: 'app-outgingEdit',
   templateUrl: './outgoingEdit.component.html',
@@ -15,15 +17,18 @@ export class outgoingEditComponent implements OnInit  {
   ID:number;
   isViewLoading:boolean=false;
   selectedFile: File;
+  project:string;
+  description:string;
 
   datePickerConfig:Partial<BsDatepickerConfig>;
 
    @ViewChild('message') displaymessage: ElementRef;   
   
-    constructor(private AJESservice:AJESService,private activeRouter:ActivatedRoute, private router:Router){
+    constructor(private AJESservice:AJESService,private activeRouter:ActivatedRoute, private router:Router,private ngxService: NgxUiLoaderService){
         this.ID=+this.activeRouter.snapshot.params['ID'];
        
-
+        this.project=  this.activeRouter.snapshot.paramMap.get('project');
+        this.description =  this.activeRouter.snapshot.paramMap.get('description');
        
         this.datePickerConfig=Object.assign({},
           {
@@ -68,8 +73,9 @@ export class outgoingEditComponent implements OnInit  {
 
   onFormSubmit(form:NgForm){
     
-    this.isViewLoading=true;
+   // this.isViewLoading=true;
 
+   this.ngxService.start();
    const formData=new FormData();
    var datestr=(new Date(this.items.date)).toUTCString();
     formData.append("reference",this.items.reference);
@@ -92,6 +98,7 @@ export class outgoingEditComponent implements OnInit  {
          this.isViewLoading=false;
          this.displaymessage.nativeElement.innerHTML=result.message;
          form.reset();
+         this.ngxService.stop();
         });
   }
 
@@ -104,7 +111,7 @@ export class outgoingEditComponent implements OnInit  {
 
   goback(){
 
-    this.router.navigate(['/register/Out']);
+    this.router.navigate(['/register/Out',this.project,this.description]);
   }
 
 
