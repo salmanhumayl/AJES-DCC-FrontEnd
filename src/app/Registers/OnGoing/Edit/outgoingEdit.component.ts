@@ -23,6 +23,8 @@ export class outgoingEditComponent implements OnInit  {
   datePickerConfig:Partial<BsDatepickerConfig>;
 
    @ViewChild('message') displaymessage: ElementRef;   
+   @ViewChild('BSubmit') savebutton: ElementRef;   //HTMLButtonElement
+   
   
     constructor(private AJESservice:AJESService,private activeRouter:ActivatedRoute, private router:Router,private ngxService: NgxUiLoaderService){
         this.ID=+this.activeRouter.snapshot.params['ID'];
@@ -99,6 +101,8 @@ export class outgoingEditComponent implements OnInit  {
          this.displaymessage.nativeElement.innerHTML=result.message;
          form.reset();
          this.ngxService.stop();
+        this.savebutton.nativeElement.disabled=true;
+         
         });
   }
 
