@@ -1,5 +1,13 @@
+
+
 <aside id="sidebar" class="sidebar">
 
+  <span *ngIf="isViewLoading">
+    <img src="../../assets/images/ng-loader.gif"/>
+    <span style="color: rgba(55, 0, 255, 0.767)">Loading.....</span>
+  
+  </span>
+  
     <ul class="sidebar-nav" id="sidebar-nav">
     <ng-container *ngFor="let productitem of RFQDetail">
       <li class="nav-item">
