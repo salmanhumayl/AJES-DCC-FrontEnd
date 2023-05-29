@@ -34,9 +34,9 @@ export class OutgoingListComponent {
 
 
 
-  @ViewChild('uploadedImage') uploadedImageRef!: HTMLImageElement;
+  /* @ViewChild('uploadedImage') uploadedImageRef!: HTMLImageElement;
 
-  @ViewChild('fileUploader') fileUploaderRef!: DxFileUploaderComponent;
+  @ViewChild('fileUploader') fileUploaderRef!: DxFileUploaderComponent; */
 
 
  constructor(private AJESservice:AJESService,private route:ActivatedRoute){
