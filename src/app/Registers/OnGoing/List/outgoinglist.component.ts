@@ -46,17 +46,17 @@ export class OutgoingListComponent {
   
   
     //this.dataSource=service.getcompanies();
-    this.url = 'https://localhost:44363/PayrollDaysMaster';
+   // this.url = 'https://localhost:44363/PayrollDaysMaster';
     //this.url='http://localhost/payrollservice/BlottterMaster';
 
     //this.url='https://ajes-webapp.ajes.ae/BigDataService/BlottterMaster';
 
-
+   this.url="https://localhost:44359/api/OutGoing";
 
     
     this.dataSource = AspNetData.createStore({
       key: 'id',
-      loadUrl: `${this.url}/GetPayrollDays`,
+      loadUrl: `${this.url}/GetOutgoing`,
       insertUrl: `${this.url}/InsertDays`,
       updateUrl: `${this.url}/UpdateDays`,
       

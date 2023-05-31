@@ -11,13 +11,9 @@
     </nav>
   </div><!-- End Page Title -->
   <section class="section">
-      
-
-<hr>
-<a [routerLink]="['/register/OutgoingAddNew',project,description]" type="button" class="btn btn-primary">Add New</a>
-
+  
+    <a [routerLink]="['/register/OutgoingAddNew',project,description]" type="button" class="btn btn-primary btn-sm">Add New</a>
           <dx-data-grid
-
           id="dataGridRef"
           [dataSource]="dataSource"
           [remoteOperations]="true"
@@ -35,7 +31,7 @@
     
           <dxi-column dataField="date"
            caption="Date" dataType="date" [format]="{ type: 'dd/MMM/yy' }"
-          
+           [width]="80"
            ></dxi-column>
           <dxi-column
              dataField="orign" 

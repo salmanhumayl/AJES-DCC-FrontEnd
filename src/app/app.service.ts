@@ -24,7 +24,7 @@ export class AJESService {
     const httpoption={
       headers:new HttpHeaders({'Content-Type' :'application/json'})
     }
-     return this._http.post<string>("https://localhost:44363/PayrollDaysMaster/OutAddDocument",formData,{
+     return this._http.post<string>("https://localhost:44359/api/OutGoing/AddDocument",formData,{
     
     })
     .pipe(
@@ -78,11 +78,11 @@ private handleError(errorResponse:HttpErrorResponse){
 
 getmenu():Observable<any[]>{
    
-  return this._http.get<any[]>("https://localhost:44378/Home/GetRights");
+  return this._http.get<any[]>("https://localhost:44359/api/Menu/GetMenuBar");
 }
 getregister(FolderID:number):Observable<any[]>{
    
-  return this._http.get<any[]>("https://localhost:44378/Home/GetRegister?FolderID=" + FolderID);
+  return this._http.get<any[]>("https://localhost:44359/api/Menu/GetRegister?FolderID=" + FolderID);
 }
 
 }
