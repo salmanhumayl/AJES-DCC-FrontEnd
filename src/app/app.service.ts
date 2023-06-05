@@ -40,7 +40,7 @@ EditPostDiscussion(formData:FormData,id:number):Observable<string>{
     headers:new HttpHeaders({'Content-Type' :'application/json'})
    //return this._http.put<string>("https://localhost:44363/PayrollDaysMaster/OutUpdateDocument/${id}/forms",formData,
   }
-   return this._http.put<string>("https://localhost:44363/PayrollDaysMaster/OutUpdateDocument",formData,{
+   return this._http.put<string>("https://localhost:44359/api/OutGoing/UpdateDocument",formData,{
   
   })
   .pipe(
@@ -55,7 +55,7 @@ EditPostDiscussion(formData:FormData,id:number):Observable<string>{
 GetRecordByID(id:number):Observable<DCCOnGoing>{
 
   
-  return this._http.get<DCCOnGoing>("https://localhost:44363/PayrollDaysMaster/GetOutGoingById?ID=" + id)
+  return this._http.get<DCCOnGoing>("https://localhost:44359/api/OutGoing/GetOutGoingById?ID=" + id)
   .pipe(
       
         catchError(this.handleError)

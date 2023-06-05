@@ -16,7 +16,7 @@ import {DxFileUploaderComponent} from 'devextreme-angular/ui/file-uploader';
 })
 export class IncomingListComponent {
 
-  filepath="http://localhost/Payrolldays/doc/"
+  filepath="http://localhost/PayrollService/DCCOutGoing/"
   name: string="";
   project:string;
   description:string;
@@ -24,13 +24,13 @@ export class IncomingListComponent {
 
  dataSource: any;
  url: string;
- backendURL:string="https://localhost:44363/PayrollDaysMaster";
-
+ //backendURL:string="https://localhost:44363/PayrollDaysMaster";
+  // backenURL:string="https://localhost:44359/api/OutGoing";
  key:number=0;
  retryButtonVisible = false;
 
 
- uploadUrl = this.backendURL + '/BulkInsert';
+ //uploadUrl = this.backendURL + '/GetOutComing';
 
 
 
@@ -46,8 +46,10 @@ export class IncomingListComponent {
   
   
     //this.dataSource=service.getcompanies();
-    this.url = 'https://localhost:44363/PayrollDaysMaster';
-    //this.url='http://localhost/payrollservice/BlottterMaster';
+    //this.url = 'https://localhost:44363/PayrollDaysMaster';
+
+    this.url="https://localhost:44359/api/InComing";
+    
 
     //this.url='https://ajes-webapp.ajes.ae/BigDataService/BlottterMaster';
 
