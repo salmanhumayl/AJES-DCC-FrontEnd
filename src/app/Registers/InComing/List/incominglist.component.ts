@@ -16,7 +16,7 @@ import {DxFileUploaderComponent} from 'devextreme-angular/ui/file-uploader';
 })
 export class IncomingListComponent {
 
-  filepath="http://localhost/PayrollService/DCCOutGoing/"
+  filepath="http://localhost/PayrollService/DCCIncoming/"
   name: string="";
   project:string;
   description:string;
