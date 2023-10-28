@@ -1,0 +1,340 @@
+
+.body
+{
+    position: relative;
+    height:100vh;
+    margin: 0;
+      /*background:url(../../assets/img/Login.jpg) no-repeat; background-size:cover; background-attachment:fixed;
+   font-family: 'Lato_font'; */
+	font-family: 'Gilroy';
+	
+	
+}
+
+.modal-urdu {
+    font-family: 'NafeesWebNaskhRegular' !important;
+}
+
+* {
+   box-sizing:border-box;
+}
+
+
+h1, h2, h3, ul, li, input {
+    margin:0; padding:0;
+}
+
+.PaddingLeft0 {
+    padding-left:0;
+}
+
+.PaddingRight0 {
+    padding-right:0;
+}
+
+.Login_Container{
+    height:100%; display:table; max-width:900px; margin:auto;
+}
+
+.main-login {
+    vertical-align:middle;
+    display:table-cell;
+}
+.inner_bg {
+    background-color:rgba(255, 255, 255, 1); padding:3% 4%; box-shadow:0px 0px 25px 0px #aaa; float:left; width:100%;
+}
+
+.RightSec {
+    border-left:1px solid #D1D3D4;
+    padding:3% 0 3% 4%;
+}
+
+.LeftSec {
+    
+    padding:3% 4% 0% 0;
+}
+
+.login-form {
+    margin-top:4%;
+}
+
+.desktopLogo img{ width:80%;}
+.mobileLogo{display:none;}
+
+.login-form .form-group {
+    float:left; width:100%; margin:8px 0;
+    position:relative;
+}
+
+.login-form .form-group .FieldIcon {
+    position:absolute; top:9px; left:12px;
+}
+.login-form .form-group .FieldIcon img {
+    vertical-align:inherit;
+}
+
+
+
+.login-form input[type=text], .login-form input[type=password] {
+    background:none;
+    border:1px solid #D1D3D4;
+    border-radius:0;
+    height:38px;
+    font-size:14px;
+    font-weight:400;
+    padding-left:38px;
+	color:#808080;
+}
+
+.login-form input:focus {
+	box-shadow:0 0 10px #00a25a40 !important;
+	border:1px solid #00a25a;
+}
+
+.login-form .ForgotTxt{ font-size:11px; font-weight:500; margin-top:5px;}
+.login-form .ForgotTxt a{color:#15804f;}
+    .login-form .btn-login {
+        width:100%;
+        border:none;
+        background:#fbb03b;
+        color:#fff;
+        font-size:14px;
+        text-transform:uppercase;
+        border-radius:0;
+        height:38px;
+		font-weight:400;
+    }
+    .login-form .FormBottomTxt {
+        float:left; width:100%; color:#808080; font-weight:600; font-size:13px;
+    }
+    .login-form .FormBottomTxt a {
+        color:#0d9346; font-weight:400;
+    }
+
+.LeftSec .Heading {
+    font-size:22px;    
+}
+.LeftSec .Heading span {
+color:#0d9346; font-weight:bold;
+}
+
+.Listing {
+    float:left; width:100%; margin-top:4%;
+}
+
+
+    .Listing ul {
+        list-style:none;
+    }
+        .Listing ul li {
+            font-weight:400;
+            font-size:11px;
+			text-align:center;
+			width:33.33%;
+			height:95px;
+			float:left;
+			padding:15px 0;
+			 transition:all .5s !important;
+        }
+		.Listing ul li:nth-child(n+4){border-top:1px solid #D1D3D4;}
+		.Listing ul li:nth-child(3n+2){border-left:1px solid #D1D3D4;border-right:1px solid #D1D3D4;}
+		.Listing ul li a{
+			color:#000000; display:block;
+        }
+		.Listing ul li:hover {
+     box-shadow: inset 0 0 20px rgba(0, 162, 90, 0.10980392156862745);
+	/* box-shadow:inset 0 0 30px #fbb03b82 */
+}
+.Listing ul li:hover a{ color:#15804f;}
+            .Listing ul li .Icon {
+                margin-bottom:10px;
+				color:#15804f;
+				width:100%;
+				float:left;
+            }
+            
+
+
+
+.MobileBankingApp {
+    float:left; width:100%; margin:12% 0 0 0;
+}
+    .MobileBankingApp .AppSecLeft {
+        font-weight:400; font-size:9.5px;
+    }
+	.MobileBankingApp .AppSecLeft p {
+        margin:0;
+    }
+
+        .MobileBankingApp .AppSecLeft .appButtons {
+            float:left; width:100%;
+        }
+        .MobileBankingApp .AppSecLeft .appButtons .btn-col {
+            float:left; width:50%;
+        }
+        /*.MobileBankingApp .AppSecLeft .appButtons .btn-col img {
+            width:auto;
+        }*/
+
+
+    .MobileBankingApp .AppSecLeft img {
+        float:left; width:85%; margin:15px 0;
+    }
+
+    .MobileBankingApp .AppSecRight {
+        border-left:1px solid #D1D3D4;
+    }
+
+.TermsText a{color:#15804f; font-size:10px;}
+
+
+.modal-header{ background:#15804f; color:#fff;}
+.modal-header .close{ color:#fbb040; font-size:27px; text-shadow:none; opacity:1;}
+
+@media screen and (max-width: 900px) {
+    .Login_Container{
+    width:95%;
+}
+}
+
+@media screen and (max-width: 767px) {
+	body{background:none;}
+	.HideOnMobile{display:none;}
+	
+	.Login_Container{
+    width:85%;
+}
+	
+	.mobileLogo{display:block;}
+	.mobileLogo img{ width:60%;}
+	.desktopLogo{display:none;}
+    .inner_bg{
+       padding:0 0; background:none; box-shadow:none;
+    }
+    .RightSec {
+        display:table-header-group;
+    }
+    .LeftSec {
+        display:table-footer-group;
+    }
+	
+	.login-form {
+    margin: 8% 0 0 0;
+    float: left;
+    width: 100%;
+}
+
+.login-form input[type=text], .login-form input[type=password]{ border-top:none; border-left:none; border-right:none; box-shadow:none;}
+
+.main-login{ vertical-align:inherit; display:inherit; height:95%; padding-top:10%;}
+.inner_bg{ height:100%; position:relative;}
+.Listing{ /*position:absolute; bottom:0;*/ padding-top:10%;}
+.Listing ul li{ height:68px; padding:10px 0;}
+.Icon img{height:25px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+div#popupContentUrduBahl ul li {
+    font-size:18px;
+    list-style: disc;
+    margin-right: 18px;
+    line-height: 1.6;
+	
+}
+.btn-warning {
+    color: #fff;
+    background-color: #fbb040;
+    border-color: #eea236;
+    font-family: gilroy;
+}
+#popupContentEnglishBahl ul
+{
+margin:10px;
+}
+#popupContentEnglishBahl ul li
+{
+      margin: 0px;
+    padding: 0px;
+    margin-left: 10px;
+	line-height: 1.7;
+}
+.modal-body {
+ 
+    overflow: auto;
+}
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.modal-urdu{
+font-family: 'Jameel Khushkhati';
+}
+
+.modal-title-urdu{
+margin: 0;
+    line-height: 1.42857143;
+    text-align: right;
+    font-size: 25px;
+    font-weight: bold;
+}
+div#popupContentUrduBahl ul {
+        text-align: right;
+    list-style: none;
+    line-height: 2;
+    font-size: 17px;
+}
+
+.checkboclabelurdu{    margin-top: 10px;}
+span.urdupolicy {
+    font-size: 17px;
+    margin-right: 20px;
+}
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+  right: 10px;
+  display:none;
+}
+
+.container{
+  padding-top:50px;
+  margin: auto;
+}
+::-ms-reveal 
+{
+    display: none;
+}
+.alert {
+    padding: 5px !important;
+    margin-bottom: 10px !important;
+    border: 1px solid transparent;
+    border-radius: 0 !important;
+}

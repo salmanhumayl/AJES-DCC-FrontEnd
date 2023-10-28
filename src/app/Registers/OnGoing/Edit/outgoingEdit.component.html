@@ -1,0 +1,129 @@
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>{{project}}</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item ">{{project}}</li> 
+        <li class="breadcrumb-item active">{{description}}</li>
+ 
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+  <section class="section">
+<div class="col-lg-12">
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"> <span style="color: red;font-size: large;" >{{Ref}}</span></h5>
+      
+        <!-- General Form Elements -->
+        <form #itemForm="ngForm" novalidate (ngSubmit)="onFormSubmit(itemForm)">
+            <div class="row mb-3">
+                <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+                <div class="col-sm-10">
+                  <input type="text" 
+                   class="form-control" 
+                   bsDatepicker
+                   [bsConfig]="datePickerConfig"
+                   id="date" 
+                   name="date"
+                  [bsValue]="items.date" 
+                  [(ngModel)]="items.date" >
+                </div>
+              </div>
+
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Orig</label>
+            <div class="col-sm-10">
+              
+              <input type="text" class="form-control" id="Orign" name="Orign" [(ngModel)]="items.orign">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputEmail" class="col-sm-2 col-form-label">CorresType</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="CorresType" name="CorresType" [(ngModel)]="items.corresType">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputPassword" class="col-sm-2 col-form-label">File NO.</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="FileNo" name="FileNo" [(ngModel)]="items.fileNo">
+            </div>
+          </div>
+         
+
+          <div class="row mb-3">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" style="height: 70px" id="Subject" name="Subject" [(ngModel)]="items.subject"></textarea>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="address" name="address" [(ngModel)]="items.address">
+              
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Typist</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="typist" name="typist" [(ngModel)]="items.typist" >
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Remarks</label>
+            <div class="col-sm-10">
+              <input type="tex" class="form-control" id="Remarks" name="Remarks" [(ngModel)]="items.remarks">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="inputNumber" class="col-sm-2 col-form-label">File Upload</label>
+            <div class="col-sm-7">
+              <input class="form-control" type="file" id="formFile" (change)="chooseFile($event)">
+            </div>
+            <div class="col-sm-5">
+              <span><b>{{items.path}}</b></span>
+            </div>
+          </div>
+
+
+         
+          <hr>
+          <div class="row mb-3"  >
+          
+            <div class="col-sm-2" >  
+              <button type="submit" class="btn btn-primary" [disabled]="itemForm.invalid" #BSubmit>Save</button>
+            </div>
+            <div class="col-sm-2" >  
+              <button type="button" class="btn btn-success pull-right" (click)="goback()">Go Back </button>
+            </div>
+           
+           <!--  <div class="col-sm-3" >
+           
+              <span *ngIf="isViewLoading">
+                  <img src="../../assets/images/ng-loader.gif"/>
+                  <span style="color: red">Processing!!! Please wait....</span>
+              
+                </span>
+              </div> -->
+           
+            <div class="col-sm-6" >  
+              <span style="color: red;font-size: x-large;" #message></span>
+            </div>
+          </div>
+          
+
+        </form><!-- End General Form Elements -->
+
+      </div>
+    </div>
+
+  </div>
+  </section>
+  </main> 

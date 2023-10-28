@@ -1,0 +1,61 @@
+
+
+
+<main id="main" class="main">
+  <div class="pagetitle" *ngIf="isloaded">
+    <h1>{{RFQDetail[0].name}}</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item ">{{RFQDetail[0].name}}</li> 
+        <li class="breadcrumb-item active">{{RFQDetail[0].folderName}}</li>
+ 
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+<section class="section">
+  <div class="row">
+
+    <ng-container *ngFor="let productitem of RFQDetail">
+    <div class="col-lg-4">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{productitem.description}}</b> </h5>
+
+          <!-- Slides only carousel -->
+          
+       
+            <div class="carousel-inner" *ngIf="!production">
+          
+              <div class="carousel-item active">
+                    
+                        <a [routerLink]="[productitem.route,RFQDetail[0].name,productitem.description]">
+                          
+                            <img src="/assets/images/image2@5x.jfif" style="height: auto" class="d-block w-100" alt="...">
+                          
+                        </a>
+                 </div>
+            </div>
+            <div class="carousel-inner" *ngIf="production">
+          
+              <div class="carousel-item active">
+                    
+                        <a [routerLink]="[productitem.route,RFQDetail[0].name,productitem.description]">
+                          
+                            <img src="assets/images/image2@5x.jfif" style="height: auto" class="d-block w-100" alt="...">
+                          
+                        </a>
+                 </div>
+            </div>
+        </div>
+      </div>
+
+     
+    </div>
+    </ng-container>
+    
+
+    </div>
+  
+</section>
+</main>

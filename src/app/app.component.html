@@ -1,0 +1,14 @@
+
+<ng-template [ngIf]=isLoggedIn>
+    <app-topnav></app-topnav>
+</ng-template>
+<ng-template [ngIf]=isLoggedIn>
+    <app-sidebar></app-sidebar>
+</ng-template>
+<ngx-ui-loader fgsType="square-loader"></ngx-ui-loader>
+<router-outlet></router-outlet>
+
+<footer></footer>   
+
+
+  
