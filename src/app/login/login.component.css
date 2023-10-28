@@ -3,9 +3,14 @@
 {
     position: relative;
     height:100vh;
+<<<<<<< HEAD
     margin: 0;
       /*background:url(../../assets/img/Login.jpg) no-repeat; background-size:cover; background-attachment:fixed;
    font-family: 'Lato_font'; */
+=======
+    margin: 0;background:url(../../assets/img/Login.jpg) no-repeat; background-size:cover; background-attachment:fixed;
+    /* font-family: 'Lato_font'; */
+>>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
 	font-family: 'Gilroy';
 	
 	
@@ -233,7 +238,25 @@ color:#0d9346; font-weight:bold;
 .Icon img{height:25px;}
 }
 
+<<<<<<< HEAD
 
+=======
+@media screen and (max-width: 400px) {
+	.main-login{height:98%;}
+	.mobileLogo img{ width:60%;}
+	.login-form .form-group{ margin:5px 0;}
+}
+@media screen and (max-width: 320px) {
+	.main-login{padding-top:8%;}
+	.login-form{ margin-top:4%;}
+	.login-form .form-group{ margin:3px 0;}
+	.login-form .FormBottomTxt{ font-size:13px;}
+	.login-form .FormBottomTxt a{ font-size:13px;}
+	.mobileLogo img{ width:60%;}
+	.Listing ul li{    height: 80px;
+    padding: 10px 10px;/* border:none !important;*/} 
+}
+>>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
 
 
 
