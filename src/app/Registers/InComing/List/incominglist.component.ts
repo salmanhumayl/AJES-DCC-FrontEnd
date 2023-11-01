@@ -52,13 +52,8 @@ export class IncomingListComponent {
     //this.dataSource=service.getcompanies();
     //this.url = 'https://localhost:44363/PayrollDaysMaster';
 
-<<<<<<< HEAD
     //this.url="https://localhost:44359/api/InComing";
     this.url="https://ajes-webapp.ajes.ae/dccservice/api/InComing";
-=======
-    this.url="https://localhost:44359/api/InComing";
-    
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
 
     //this.url='https://ajes-webapp.ajes.ae/BigDataService/BlottterMaster';
 

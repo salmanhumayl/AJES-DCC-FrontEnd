@@ -74,11 +74,7 @@ export class outgoingEditComponent implements OnInit  {
         
            this.items=products;
            this.items.date=new Date(this.items.date);
-<<<<<<< HEAD
            this.Ref=this.items.reference;
-=======
-           
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
            
         },
         complete:()=>{
@@ -115,18 +111,11 @@ export class outgoingEditComponent implements OnInit  {
        var result=JSON.parse(JSON.stringify(response));
          this.isViewLoading=false;
          this.displaymessage.nativeElement.innerHTML=result.message;
-<<<<<<< HEAD
         
          this.ngxService.stop();
         this.savebutton.nativeElement.disabled=true;
         this.Ref = "AJES/" + this.items.orign + "/" + this.items.corresType + "/" + this.items.fileNo + "/" + this.items.refNo;
         form.reset();
-=======
-         form.reset();
-         this.ngxService.stop();
-        this.savebutton.nativeElement.disabled=true;
-         
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
         });
   }
 
