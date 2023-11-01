@@ -2,11 +2,7 @@ import { Component, OnInit,ElementRef, ViewChild } from '@angular/core';
 import{Router,ActivatedRoute} from '@angular/router';
 import{BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
 import { DCCOnGoing } from '../../../Models/DCCOnGoing';
-<<<<<<< HEAD
 import { AJESService } from '../../../service/app.service';
-=======
-import { AJESService } from '../../../app.service';
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
 import { NgForm } from '@angular/forms';
 
 import { NgxUiLoaderService } from 'ngx-ui-loader';
@@ -23,20 +19,12 @@ export class outgoingEditComponent implements OnInit  {
   selectedFile: File;
   project:string;
   description:string;
-<<<<<<< HEAD
   Ref:string;
-=======
-
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
   datePickerConfig:Partial<BsDatepickerConfig>;
 
    @ViewChild('message') displaymessage: ElementRef;   
    @ViewChild('BSubmit') savebutton: ElementRef;   //HTMLButtonElement
    
-<<<<<<< HEAD
-
-=======
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
   
     constructor(private AJESservice:AJESService,private activeRouter:ActivatedRoute, private router:Router,private ngxService: NgxUiLoaderService){
         this.ID=+this.activeRouter.snapshot.params['ID'];
@@ -74,11 +62,7 @@ export class outgoingEditComponent implements OnInit  {
         
            this.items=products;
            this.items.date=new Date(this.items.date);
-<<<<<<< HEAD
            this.Ref=this.items.reference;
-=======
-           
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
            
         },
         complete:()=>{
@@ -115,18 +99,11 @@ export class outgoingEditComponent implements OnInit  {
        var result=JSON.parse(JSON.stringify(response));
          this.isViewLoading=false;
          this.displaymessage.nativeElement.innerHTML=result.message;
-<<<<<<< HEAD
         
          this.ngxService.stop();
         this.savebutton.nativeElement.disabled=true;
         this.Ref = "AJES/" + this.items.orign + "/" + this.items.corresType + "/" + this.items.fileNo + "/" + this.items.refNo;
         form.reset();
-=======
-         form.reset();
-         this.ngxService.stop();
-        this.savebutton.nativeElement.disabled=true;
-         
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
         });
   }
 
