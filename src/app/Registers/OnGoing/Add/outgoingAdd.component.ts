@@ -3,12 +3,8 @@ import{Router,ActivatedRoute} from '@angular/router';
 import{BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
 import { DCCOnGoing } from '../../../Models/DCCOnGoing';
 
-;
-<<<<<<< HEAD
+
 import { AJESService } from '../../../service/app.service';
-=======
-import { AJESService } from '../../../app.service';
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
 import { NgForm } from '@angular/forms';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 
@@ -67,10 +63,7 @@ export class outgoingAddComponent  {
     
 
     this.AJESservice.PostDiscussion(formData).subscribe((response)=>{
-<<<<<<< HEAD
     //  console.log(response);
-=======
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
        var result=JSON.parse(JSON.stringify(response));
          this.isViewLoading=false;
          this.displaymessage.nativeElement.innerHTML=result.message;

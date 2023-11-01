@@ -1,9 +1,5 @@
 import { Component,ViewChild,ElementRef } from '@angular/core';
-<<<<<<< HEAD
 import { AJESService } from '../../../service/app.service';
-=======
-import { AJESService } from '../../../app.service';
->>>>>>> 7a8d15a93b1b0a01c67bde01f7d1d07a39449ca3
 import{ActivatedRoute} from '@angular/router';
 
 import * as AspNetData from 'devextreme-aspnet-data-nojquery';
