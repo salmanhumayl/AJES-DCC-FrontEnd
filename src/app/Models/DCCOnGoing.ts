@@ -1,9 +1,9 @@
 export class DCCOnGoing{
    
     date:Date;
-    orign:string;
-    corresType:string;
-    fileNo:string;
+    orign:string="";
+    corresType:string="";
+    fileNo:string="";
     reference:string;
     subject:string="";
     address:string="";
