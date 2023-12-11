@@ -6,6 +6,7 @@ import { AJESService } from '../../../service/app.service';
 import { NgForm } from '@angular/forms';
 
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-outgingEdit',
@@ -26,7 +27,9 @@ export class outgoingEditComponent implements OnInit  {
    @ViewChild('BSubmit') savebutton: ElementRef;   //HTMLButtonElement
    
   
-    constructor(private AJESservice:AJESService,private activeRouter:ActivatedRoute, private router:Router,private ngxService: NgxUiLoaderService){
+    constructor(private AJESservice:AJESService,
+      private notify:NotificationService,
+      private activeRouter:ActivatedRoute, private router:Router,private ngxService: NgxUiLoaderService){
         this.ID=+this.activeRouter.snapshot.params['ID'];
        
         this.project=  this.activeRouter.snapshot.paramMap.get('project');
@@ -98,8 +101,8 @@ export class outgoingEditComponent implements OnInit  {
     this.AJESservice.EditPostDiscussion(formData,this.ID).subscribe((response)=>{
        var result=JSON.parse(JSON.stringify(response));
          this.isViewLoading=false;
-         this.displaymessage.nativeElement.innerHTML=result.message;
-        
+       //this.displaymessage.nativeElement.innerHTML=result.message;
+        this.notify.showSuccess(result.message);
          this.ngxService.stop();
         this.savebutton.nativeElement.disabled=true;
         this.Ref = "AJES/" + this.items.orign + "/" + this.items.corresType + "/" + this.items.fileNo + "/" + this.items.refNo;

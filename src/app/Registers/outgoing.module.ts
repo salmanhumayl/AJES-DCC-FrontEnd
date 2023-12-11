@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule, Routes } from "@angular/router";
+import { ToastrModule } from 'ngx-toastr';
+
 import { DevExtremeModule,DxFileUploaderModule } from 'devextreme-angular';
 import { FormsModule } from '@angular/forms';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker'; 
@@ -44,7 +46,11 @@ const routes: Routes = [
   ]
   
   @NgModule({
-    imports: [DevExtremeModule,DxFileUploaderModule,FormsModule, CommonModule,BsDatepickerModule.forRoot(),RouterModule.forChild(routes)],
+    imports: [
+      DevExtremeModule,DxFileUploaderModule,FormsModule, 
+      CommonModule,BsDatepickerModule.forRoot(),
+      RouterModule.forChild(routes)
+    ],
     declarations: [OutgoingListComponent, outgoingAddComponent,outgoingEditComponent,SubmenuComponent, IncomingListComponent],
     exports: [RouterModule]
   })

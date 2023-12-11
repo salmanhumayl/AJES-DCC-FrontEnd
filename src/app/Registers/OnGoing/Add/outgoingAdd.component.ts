@@ -7,6 +7,7 @@ import { DCCOnGoing } from '../../../Models/DCCOnGoing';
 import { AJESService } from '../../../service/app.service';
 import { NgForm } from '@angular/forms';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-outgingadd',
@@ -25,7 +26,10 @@ export class outgoingAddComponent  {
 
    @ViewChild('message') displaymessage: ElementRef;   
 
-    constructor(private AJESservice:AJESService,private router:Router,private activeRouter:ActivatedRoute,private ngxService: NgxUiLoaderService)
+    constructor(private AJESservice:AJESService,private router:Router,
+      private activeRouter:ActivatedRoute,
+      private notify:NotificationService,
+      private ngxService: NgxUiLoaderService)
     {
       this.datePickerConfig=Object.assign({},
         {
@@ -66,6 +70,7 @@ export class outgoingAddComponent  {
     //  console.log(response);
        var result=JSON.parse(JSON.stringify(response));
          this.isViewLoading=false;
+         this.notify.showSuccess(result.message);
          this.displaymessage.nativeElement.innerHTML=result.message;
          form.reset();
          this.ngxService.stop();

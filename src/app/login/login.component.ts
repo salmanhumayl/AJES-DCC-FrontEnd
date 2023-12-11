@@ -11,6 +11,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 import{NgForm} from '@angular/forms';
 import { collapseAnimation } from 'angular-animations';
+import { NotificationService } from '../service/notification.service';
 
 
 @Component({
@@ -26,7 +27,9 @@ import { collapseAnimation } from 'angular-animations';
     @ViewChild('message') displaymessage: ElementRef;   
 
 
-    constructor(private AJESservice:AJESService,private router:Router,public authService: AuthenticationService,private msg:MessengerService,
+    constructor(private AJESservice:AJESService,private router:Router,
+      private notify:NotificationService,
+      public authService: AuthenticationService,private msg:MessengerService,
       private ngxService: NgxUiLoaderService
       ) { }
   
@@ -49,7 +52,8 @@ import { collapseAnimation } from 'angular-animations';
           this.ngxService.stop();
          }
          else{
-           this.displaymessage.nativeElement.innerHTML=response.message;
+          this.notify.showError(response.message);
+           //this.displaymessage.nativeElement.innerHTML=response.message;
            form.reset();
            this.ngxService.stop();
          }

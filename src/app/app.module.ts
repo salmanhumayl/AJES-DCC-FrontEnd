@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './guard/auth.guard';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -41,7 +42,12 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     FormsModule,
     NgxUiLoaderModule,
-    NgxUiLoaderRouterModule
+    NgxUiLoaderRouterModule,
+    ToastrModule.forRoot({
+      timeOut: 6500,
+      positionClass: "toast-bottom-left",
+      preventDuplicates: true,
+    }),
     
     
     
