@@ -20,7 +20,10 @@
           
           [showColumnLines]="true"
           [showRowLines]="true"
-          [showBorders]="true">
+          [showBorders]="true"
+          [hoverStateEnabled]="true"
+        
+          >
           
             
           
@@ -30,7 +33,7 @@
          
     
           <dxi-column dataField="date"
-           caption="Date" dataType="date" [format]="{ type: 'dd/MMM/yy' }"
+           caption="Date" dataType="date" [format]="{ type: 'dd/MM/yy' }"
            [width]="80"
            ></dxi-column>
           <dxi-column
