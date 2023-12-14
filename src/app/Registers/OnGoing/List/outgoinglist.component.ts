@@ -23,7 +23,7 @@ export class OutgoingListComponent {
 
   //filepath="http://localhost/PayrollService/DCCOutGoing/"
 
-  filepath="https://ajes-webapp.ajes.ae/dccservice/DCCOutGoing/"
+  filepath="https://ajes-webapp.ajes.ae/DCC/DCCOutGoing/"
   name: string="";
   project:string;
   description:string;
@@ -37,13 +37,6 @@ export class OutgoingListComponent {
  retryButtonVisible = false;
 
 
- //uploadUrl = this.backendURL + '/BulkInsert';
-
-
-
-  /* @ViewChild('uploadedImage') uploadedImageRef!: HTMLImageElement;
-
-  @ViewChild('fileUploader') fileUploaderRef!: DxFileUploaderComponent; */
 
 
  constructor(private AJESservice:AJESService,private route:ActivatedRoute,public authService:AuthenticationService){
