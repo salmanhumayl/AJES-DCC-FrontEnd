@@ -21,7 +21,7 @@ export class AuthenticationService {
     localStorage.setItem("token_validity", token_validity);
   }
 
-  token_validity
+  
 
   getToken() {
 
