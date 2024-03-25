@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //import { ModalModule } from 'ngx-bootstrap/modal';
 
-import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
 import { TopnavComponent } from './shared/topnav/topnav.component';
 import {SidebarComponent} from './shared/sidebar/sidebar.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -20,6 +20,7 @@ import { AuthGuard } from './guard/auth.guard';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ToastrModule } from 'ngx-toastr';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
 
 
 
@@ -52,7 +53,10 @@ import { ToastrModule } from 'ngx-toastr';
     
     
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

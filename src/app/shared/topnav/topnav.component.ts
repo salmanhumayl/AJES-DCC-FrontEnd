@@ -15,10 +15,11 @@ export class TopnavComponent implements AfterViewInit  {
   lEmptyCard:boolean=false;
   Name:string;
 
-  constructor(private msg:MessengerService) { }
+  constructor(public msg:MessengerService) { }
 
   ngOnInit(): void {
-    this.msg.isWelComeName$.subscribe(data => this.Name= data);
+    //this.msg.isWelComeName$.subscribe(data => this.Name= data);
+    //alert(this.Name);
   }
 
   ngAfterViewInit(){

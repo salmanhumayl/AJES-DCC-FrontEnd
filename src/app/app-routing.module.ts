@@ -19,13 +19,12 @@ const routes:Routes=[
     
     {path:'logout',component:LogoutComponent},
 
-   
     {
       path:'register',
       loadChildren: () => import('./Registers/outgoing.module').then(m => m.default)
-    },
+    }
   
-    {path:'**',component:LoginComponent}
+   // {path:'**',redirectTo: '/login'}
   ];
   
   @NgModule({

@@ -1,8 +1,8 @@
 
-<ng-template [ngIf]=isLoggedIn>
+<ng-template [ngIf]=msg.isLoggedIn$.value>
     <app-topnav></app-topnav>
 </ng-template>
-<ng-template [ngIf]=isLoggedIn>
+<ng-template [ngIf]=msg.isLoggedIn$.value>
     <app-sidebar></app-sidebar>
 </ng-template>
 <ngx-ui-loader fgsType="square-loader"></ngx-ui-loader>

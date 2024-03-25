@@ -70,7 +70,7 @@ private handleError(errorResponse:HttpErrorResponse){
 }
 
 getmenu():Observable<any[]>{
-   
+
   return this._http.get<any[]>(this.domain + "api/Menu/GetMenuBar");
   
 }

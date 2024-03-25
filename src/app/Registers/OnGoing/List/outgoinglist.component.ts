@@ -14,8 +14,8 @@ import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'OutGoingList',
-  templateUrl: './outgoinglist.component.html',
-  providers: [AJESService]
+  templateUrl: './outgoinglist.component.html'
+ // providers: [AJESService]
 })
 export class OutgoingListComponent {
 

@@ -38,14 +38,11 @@ import { NotificationService } from '../service/notification.service';
       this.ngxService.start();
 
       this.AJESservice.Login(this.LoginModel).subscribe((response:any)=>{
-      
-       // console.log(result);
-      //  alert(response.status);
-       
-       
+             
         if (response.status=="ok"){
           this.authService.storeTokenvalidity(response.expiration);
           this.authService.storeToken(response.token);
+          localStorage.setItem('Name', response.name);
           this.msg.isLoggedIn$.next(true);
           this.msg.isWelComeName$.next(response.name);
           this.router.navigate(['main']);  

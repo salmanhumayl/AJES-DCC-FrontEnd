@@ -29,7 +29,11 @@ export class outgoingEditComponent implements OnInit  {
   
     constructor(private AJESservice:AJESService,
       private notify:NotificationService,
-      private activeRouter:ActivatedRoute, private router:Router,private ngxService: NgxUiLoaderService){
+      private activeRouter:ActivatedRoute,
+       private router:Router,private ngxService: NgxUiLoaderService){
+
+
+        
         this.ID=+this.activeRouter.snapshot.params['ID'];
        
         this.project=  this.activeRouter.snapshot.paramMap.get('project');

@@ -20,7 +20,7 @@
           <ng-container *ngFor="let detail of productitem.dccProjectFolders">
           <li>
             
-            <a [routerLink]="['register/menu/',detail.folder.id]">
+            <a [routerLink]="['/register/menu/',detail.folder.id]">
               <i class="bi bi-folder-fill"></i><span>{{detail.folder.folderName}}</span>
             </a>
           </li>

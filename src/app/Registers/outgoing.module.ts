@@ -42,7 +42,9 @@ const routes: Routes = [
     {
         path: 'OutgoingEdit/:ID/:project/:description',
         component: outgoingEditComponent
-     }
+     },
+      
+     {path:'**',redirectTo: '/main'}
   ]
   
   @NgModule({

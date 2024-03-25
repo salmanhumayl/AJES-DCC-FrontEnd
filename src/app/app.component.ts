@@ -18,11 +18,12 @@ export class AppComponent implements OnInit{
   IsAuth:string="";;
   isLoggedIn:boolean;
 
- constructor(private msg:MessengerService,private auth:AuthenticationService){
+ constructor(public msg:MessengerService,private auth:AuthenticationService){
 
   }
   ngOnInit(): void {
-    this.msg.isLoggedIn$.subscribe(data => this.isLoggedIn= data);
+   // alert(this.msg.isLoggedIn$.value);
+   // this.msg.isLoggedIn$.subscribe(data => this.isLoggedIn= data);
   }
   
       
