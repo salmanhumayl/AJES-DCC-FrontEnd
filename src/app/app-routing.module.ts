@@ -7,13 +7,14 @@ import { LogoutComponent } from './logout/logout.component';
 import { LandingComponent } from './Main/LandingPage.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { loginmodel } from './Models/loginmodel';
+import { AuthGuard } from './guard/auth.guard';
 
 
 const routes:Routes=[
     
     {path:'',component:LoginComponent,pathMatch:'full'},
     {path:'login',component:LoginComponent},
-    {path:'main',component:LandingComponent},
+    {path:'main',component:LandingComponent,canActivate:[AuthGuard]},
     {path:'sidemenu',component:SidebarComponent},
     
     

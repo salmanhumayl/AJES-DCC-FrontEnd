@@ -27,11 +27,12 @@ export class AJESService {
   PostDiscussion(formData:FormData):Observable<string>{
 
 
-  let token=this.authService.getToken();
-  let headers=new HttpHeaders().set("Authorization","bearer " + token)
+ // let token=this.authService.getToken();
+ // let headers=new HttpHeaders().set("Authorization","bearer " + token)
     
        
-      return this._http.post<string>(this.domain + "api/OutGoing/AddDocument",formData,{headers:headers})   
+     // return this._http.post<string>(this.domain + "api/OutGoing/AddDocument",formData,{headers:headers})   
+     return this._http.post<string>(this.domain + "api/OutGoing/AddDocument",formData)   
      .pipe(
       catchError(this.handleError)
     
@@ -40,11 +41,11 @@ export class AJESService {
   
 }
 
-EditPostDiscussion(formData:FormData,id:number):Observable<string>{
-  let token=this.authService.getToken();
-  let headers=new HttpHeaders().set("Authorization","bearer " + token)
+ EditPostDiscussion(formData:FormData,id:number):Observable<string>{
+ // let token=this.authService.getToken();
+  //let headers=new HttpHeaders().set("Authorization","bearer " + token)
  
-  return this._http.put<string>(this.domain + "api/OutGoing/UpdateDocument",formData,{headers:headers}) 
+  return this._http.put<string>(this.domain + "api/OutGoing/UpdateDocument",formData) 
   .pipe(
     catchError(this.handleError)
   
@@ -53,9 +54,9 @@ EditPostDiscussion(formData:FormData,id:number):Observable<string>{
 }
 
 GetRecordByID(id:number):Observable<DCCOnGoing>{
-  let token=this.authService.getToken();
-  let headers=new HttpHeaders().set("Authorization","bearer " + token)
-  return this._http.get<DCCOnGoing>(this.domain + "api/OutGoing/GetOutGoingById?ID=" + id,{headers:headers}) 
+  //let token=this.authService.getToken();
+ // let headers=new HttpHeaders().set("Authorization","bearer " + token)
+  return this._http.get<DCCOnGoing>(this.domain + "api/OutGoing/GetOutGoingById?ID=" + id) 
   .pipe(
       
         catchError(this.handleError)
