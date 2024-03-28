@@ -14,6 +14,8 @@ import { outgoingEditComponent } from './OnGoing/Edit/outgoingEdit.component';
 
 
 import { IncomingListComponent } from './InComing/List/incominglist.component';
+import { LandingComponent } from "../Main/LandingPage.component";
+import { AuthGuard } from "../guard/auth.guard";
 
 const routes: Routes = [
 
@@ -42,9 +44,7 @@ const routes: Routes = [
     {
         path: 'OutgoingEdit/:ID/:project/:description',
         component: outgoingEditComponent
-     },
-      
-     {path:'**',redirectTo: '/main'}
+     }
   ]
   
   @NgModule({

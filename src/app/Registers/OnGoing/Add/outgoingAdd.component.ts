@@ -11,8 +11,8 @@ import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-outgingadd',
-  templateUrl: './outgoingAdd.component.html',
-  providers: [AJESService]  
+  templateUrl: './outgoingAdd.component.html'
+ // providers: [AJESService]  
 })
 export class outgoingAddComponent  {
   items:DCCOnGoing=new DCCOnGoing();

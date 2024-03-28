@@ -12,20 +12,19 @@ import { AuthGuard } from './guard/auth.guard';
 
 const routes:Routes=[
     
-    {path:'',component:LoginComponent,pathMatch:'full'},
+    {path:'',component:LandingComponent,pathMatch:'full',canActivate:[AuthGuard]},
     {path:'login',component:LoginComponent},
     {path:'main',component:LandingComponent,canActivate:[AuthGuard]},
     {path:'sidemenu',component:SidebarComponent},
-    
-    
+        
     {path:'logout',component:LogoutComponent},
 
     {
       path:'register',
       loadChildren: () => import('./Registers/outgoing.module').then(m => m.default)
-    }
+    },
   
-   // {path:'**',redirectTo: '/login'}
+    {path:'**',redirectTo: '/main'} // ** means match all the routes which is not matching with my route
   ];
   
   @NgModule({

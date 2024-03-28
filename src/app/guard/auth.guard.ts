@@ -13,11 +13,19 @@ export class AuthGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): boolean {
     if (!this.auth.isAuthenticated()){
-        
+        debugger;
      // this.router.navigate(['login'],{queryParams:{returnUrl:state.url}});
       this.router.navigate(['/login'], { replaceUrl: true });
+      return false;
     }
     return true;
   }
-  
+  //the canActivate exists to prevent unauthorized users from accessing a route,
+
+
+
+ 
+ 
+//The CanLoad Guard hinders the loading of the Lazy Loaded Module. 
+//We generally use this guard when we do not need unauthorized routes of the module in any navigation.
 }

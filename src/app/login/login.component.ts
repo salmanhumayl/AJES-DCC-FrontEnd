@@ -17,8 +17,8 @@ import { NotificationService } from '../service/notification.service';
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css'],
-    providers: [AJESService]  
+    styleUrls: ['./login.component.css']
+   // providers: [AJESService]  
   })
 
   export class LoginComponent{

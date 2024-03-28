@@ -6,8 +6,8 @@ import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-submenu',
-  templateUrl: './menu.component.html',
-  providers: [AJESService] 
+  templateUrl: './menu.component.html'
+ // providers: [AJESService] 
 })
 export class SubmenuComponent implements OnInit {
   RFQDetail:any[];

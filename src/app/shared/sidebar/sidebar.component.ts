@@ -5,8 +5,8 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-sidebar',
-  templateUrl: './Sidebar.component.html',
-  providers: [AJESService] 
+  templateUrl: './Sidebar.component.html'
+  //providers: [AJESService] 
 })
 export class SidebarComponent implements OnInit {
   RFQDetail:any[];

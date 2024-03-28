@@ -10,8 +10,8 @@ import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-outgingEdit',
-  templateUrl: './outgoingEdit.component.html',
-  providers: [AJESService]
+  templateUrl: './outgoingEdit.component.html'
+ // providers: [AJESService]
 })
 export class outgoingEditComponent implements OnInit  {
   items:DCCOnGoing;
